@@ -25,9 +25,12 @@ def bubble_sort(lst: list) -> list:
                 has_swapped = True
         n_iters += 1
 
-        return lst
+    return lst
 
 
-a_list = [4, 1, 3, 2]
-b_list = [4, 12, 499, 2, 1, 8, 66, 94, 94]
-print(bubble_sort(b_list))
+if __name__ == '__main__':
+    while True:
+        user_str = input('Type a list to bubble sort. E.g. [3, 1, 4, 2]\nUnsorted:')
+        user_str = user_str.strip('[').strip(']').split(',')
+        user_list = [float(s) for s in user_str]
+        print('  Sorted:' + str(bubble_sort(user_list)), '\n')
