@@ -11,15 +11,19 @@ def bubble_sort(lst: list) -> list:
     """
 
     has_swapped = True
-    # Stop iterating through list if no elements were swapped
+
+    n_iters = 0
+
     while(has_swapped):
+        # Stop iterating through list if no elements were previously swapped
         has_swapped = False
+
         # last two elements to compare are n-2 and n-1
-        for i in range(len(lst) - 1):
+        for i in range(len(lst) - n_iters - 1):
             if lst[i] > lst[i+1]:
                 lst[i], lst[i+1] = lst[i+1], lst[i]
-
                 has_swapped = True
+        n_iters += 1
 
         return lst
 
