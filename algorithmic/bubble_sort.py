@@ -10,13 +10,18 @@ def bubble_sort(lst: list) -> list:
         list: The list sorted in ascending order.
     """
 
-    for i in range(len(lst)):
+    has_swapped = True
+    # Stop iterating through list if no elements were swapped
+    while(has_swapped):
+        has_swapped = False
         # last two elements to compare are n-2 and n-1
-        for j in range(len(lst) - 1):
-            if lst[j] > lst[j+1]:
-                lst[j], lst[j+1] = lst[j+1], lst[j]
+        for i in range(len(lst) - 1):
+            if lst[i] > lst[i+1]:
+                lst[i], lst[i+1] = lst[i+1], lst[i]
 
-    return lst
+                has_swapped = True
+
+        return lst
 
 
 a_list = [4, 1, 3, 2]
