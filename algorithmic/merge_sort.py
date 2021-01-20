@@ -33,10 +33,12 @@ def merge_sort(lst: list) -> list:
             j += 1
             k += 1
 
-        print('lst: ', lst)
-
     return lst
 
 
-test_list = [2, 98, 65, 98.0, 4, 1209, 137]
-print(merge_sort(test_list))
+if __name__ == '__main__':
+
+    user_str = input("Enter a numerical list to sort. E.g. [12, 2.2, 43, 9, 9.]\n")
+    user_str = user_str.strip('[').strip(']').split(',')
+    user_list = [float(s) for s in user_str]
+    print(merge_sort(user_list))
