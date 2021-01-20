@@ -1,5 +1,11 @@
 
 def merge_sort(lst: list) -> list:
+    """Sorts a numerical list with a merge sort algorithm.
+    Args:
+        lst (list): The list to be sorted.
+    Returns:
+        list: The sorted list in ascending order.
+    """
 
     if len(lst) > 1:
         # Divide into sublists
